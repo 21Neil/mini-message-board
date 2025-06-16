@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=prod node app.js",
-    "dev": "NODE_ENV=dev node --watch app.js"
+    "start": "DB_URL=${{ Postgres.DATABASE_URL }} node app.js",
+    "dev": "node --watch app.js"
   },
   "keywords": [],
   "author": "",
