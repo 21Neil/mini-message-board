@@ -1,9 +1,9 @@
 import { Router } from 'express'
-import { createNewMessage, getNewMessageView } from '../controller/newMessageController.js'
+import { postNewMessage, getNewMessageView } from '../controller/newMessageController.js'
 
 const newMessageRouter = Router()
 
 newMessageRouter.get('/', getNewMessageView)
-newMessageRouter.post('/', createNewMessage)
+newMessageRouter.post('/', postNewMessage)
 
 export default newMessageRouter

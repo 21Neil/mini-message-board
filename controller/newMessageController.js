@@ -1,15 +1,12 @@
-import { pushNewMessage } from '../db.js'
+import { createNewMessage } from '../db/queries.js';
 
 const getNewMessageView = (req, res) => {
-  res.render('form')
-}
+  res.render('form');
+};
 
-const createNewMessage = (req, res) => {
-  pushNewMessage(req.body.name, req.body.message)
-  res.redirect('/')
-}
+const postNewMessage = async (req, res) => {
+  await createNewMessage(req.body.name, req.body.message);
+  res.redirect('/');
+};
 
-export {
-  getNewMessageView,
-  createNewMessage
-}
+export { getNewMessageView, postNewMessage };

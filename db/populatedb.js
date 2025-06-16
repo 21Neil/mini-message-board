@@ -2,7 +2,7 @@ import { Client } from 'pg';
 import 'dotenv/config';
 
 const SQL = `
-  CREATE TABLE IF NOT EXISTS message (
+  CREATE TABLE IF NOT EXISTS messages (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     text VARCHAR(255),
     username VARCHAR(50),

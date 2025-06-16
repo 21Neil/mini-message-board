@@ -1,8 +1,7 @@
-import { getMessage } from "../db.js"
+import { getMessages } from "../db/queries.js"
 
-const messages = getMessage()
-
-const getIndexView = (req, res) => {
+const getIndexView = async (req, res) => {
+  const messages = (await getMessages()).rows
   res.render('index', { title: 'Mini Messageboard', messages})
 }
 

@@ -1,7 +1,8 @@
-import { getMessageById } from "../db.js"
+import { getMessageById } from "../db/queries.js"
 
-const getDetailView = (req, res) => {
-  const message = getMessageById(Number(req.params.id))
+const getDetailView = async (req, res) => {
+  const message = (await getMessageById(Number(req.params.id))).rows[0]
+  console.log(message)
   res.render('detail', { title: 'Detail', message })
 }
 
